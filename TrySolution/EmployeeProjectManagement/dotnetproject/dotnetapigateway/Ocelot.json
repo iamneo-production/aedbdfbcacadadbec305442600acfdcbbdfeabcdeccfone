@@ -1,0 +1,60 @@
+{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/api/Employee",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7214
+                }
+            ],
+            "UpstreamPathTemplate": "/gateway/Employee",
+            "UpstreamHttpMethod": ["POST", "GET"],
+            "DownstreamHttpVersion": "2.0",
+            "DangerousAcceptAnyServerCertificate": false
+        },
+        {
+            "DownstreamPathTemplate": "/api/Employee/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7214
+                }
+            ],
+            "UpstreamPathTemplate": "/gateway/Employee/{id}",
+            "UpstreamHttpMethod": ["DELETE", "GET"],
+            "DownstreamHttpVersion": "2.0",
+            "DangerousAcceptAnyServerCertificate": false
+        },
+        {
+            "DownstreamPathTemplate": "/api/Project",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 6200
+                }
+            ],
+            "UpstreamPathTemplate": "/gateway/Project",
+            "UpstreamHttpMethod": ["POST", "GET"],
+            "DownstreamHttpVersion": "2.0",
+            "DangerousAcceptAnyServerCertificate": false
+        },
+        {
+            "DownstreamPathTemplate": "/api/Project/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 6200
+                }
+            ],
+            "UpstreamPathTemplate": "/gateway/Project/{id}",
+            "UpstreamHttpMethod": ["DELETE"],
+            "DownstreamHttpVersion": "2.0",
+            "DangerousAcceptAnyServerCertificate": false
+        }
+    ]
+}
